@@ -1,0 +1,11 @@
+[package]
+name = "cn-in-git"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+encoding_rs = "0.8.35"
+ignore = "0.4.23"
+regex = "1.11.1"
+walkdir = "2.5.0"
+clap = { version = "4.5.31", features = ["derive"] }
