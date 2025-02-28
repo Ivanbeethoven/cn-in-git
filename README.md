@@ -1,6 +1,6 @@
 # 中文代码检测器（Chinese Code Detector）
 
-[(GitHub)](https://crates.io/crates/chinese-detector)
+[(GitHub)](https://github.com/Ivanbeethoven/cn-in-git/tree/master)
 
 
 一个高效检测代码文件中中文字符的Rust工具，支持.gitignore规则和多种配置方式。
@@ -17,10 +17,9 @@
 
 ## 📦 安装
 
-### 从Cargo安装
-```bash
-cargo install chinese-detector
-```
+### 从Github Release下载
+[Linux-v0.1](https://github.com/Ivanbeethoven/cn-in-git/releases/download/v0.1.0/cig-linux-v0.1.0)
+[Windows-v0.1](https://github.com/Ivanbeethoven/cn-in-git/releases/download/v0.1.0/cn-in-git-win-v0.1.0.exe)
 
 ### 从源码安装
 ```bash
@@ -30,12 +29,13 @@ cargo build --release
 ```
 ## 🚀 使用方式
 ```bash
-cdetector  # 检测当前目录
-cdetector path/to/project  # 检测指定目录
-cdetector --extensions rs,cpp,md #指定扩展名
+cig  # 检测当前目录
+cig path/to/project  # 检测指定目录
+cig --extensions rs,cpp,md #指定扩展名
 ```
 ### 排除文件
 将需要排除的路径添加到.gitignore文件
+
 
 ### 📌 示例输出
 ```
@@ -48,3 +48,5 @@ docs/README.md : Line numbers [5]
 
 Error: Chinese characters are included in the code files
 ```
+
+PS: 本项目大部分代码由DeepSeek/R1生成.,具体prompt请查看[网页快照](https://github.com/Ivanbeethoven/cn-in-git/blob/master/doc/SiliconCloud.html)
