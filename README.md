@@ -15,6 +15,38 @@
 - 📁 多扩展名支持（可配置检测文件类型）
 - 🚀 高性能（基于Rust实现）
 
+## 快速开始
+在你项目集成`cn-in-git`,用于检测代码中是否含有中文字符，以方便不小心忽视注释中残留的中文内容。
+在github任意仓库中新建文件`.github/workflows/cig.yaml`
+```yaml
+name: Run CIG in Docker Container
+
+on:
+  workflow_dispatch: # manual
+  push: 
+    branches: [ "master" ] # Need Customize.
+
+jobs:
+  run-cig:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # pull the full commit.
+
+    - name: Pull Docker image
+      run: docker pull ghcr.io/ivanbeethoven/cn-in-git:master
+
+    - name: Run CIG command with code mount
+      run: |
+        docker run \
+          -v "${{ github.workspace }}:/workspace" \
+          -w /workspace \
+          --rm \
+          ghcr.io/ivanbeethoven/cn-in-git:master \
+          cig
+```
 ## 📦 安装
 
 ### 从Github Release下载

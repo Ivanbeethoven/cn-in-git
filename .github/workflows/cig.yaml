@@ -1,9 +1,9 @@
 name: Run CIG in Docker Container
 
 on:
-  workflow_dispatch: # 手动触发
-  push: # 或自动触发（例如每次 push 时）
-    branches: [ "master" ]
+  workflow_dispatch: # manual
+  push: 
+    branches: [ "master" ] # Need Customize.
 
 jobs:
   run-cig:
@@ -12,7 +12,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0 # 拉取完整提交历史（如果 cig 需要）
+        fetch-depth: 0 # pull the full commit.
 
     - name: Pull Docker image
       run: docker pull ghcr.io/ivanbeethoven/cn-in-git:master
