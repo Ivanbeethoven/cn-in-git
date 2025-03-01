@@ -15,7 +15,7 @@ jobs:
       - name: Debug Secrets
         run: |
           echo "Username exists: ${{ secrets.DOCKERHUB_USERNAME != '' }}"
-          echo "Password exists: ${{ secrets.DOCKERHUB_USERNAME }}"
+          echo "Username exists: ${{ secrets.DOCKERHUB_USERNAME }}"
           echo "Token exists: ${{ secrets.DOCKERHUB_TOKEN != '' }}"
       # 1. 检出代码
       - name: Checkout repository
