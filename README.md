@@ -1,4 +1,4 @@
-# 中文代码检测器（Chinese Code Detector）
+# 中文代码检测器（CN in Git Repository）
 
 [(GitHub)](https://github.com/Ivanbeethoven/cn-in-git/tree/master)
 
