@@ -3,7 +3,7 @@ name: Run CIG in Docker Container
 on:
   workflow_dispatch: # 手动触发
   push: # 或自动触发（例如每次 push 时）
-    branches: [ main, master ]
+    branches: [ "master" ]
 
 jobs:
   run-cig:
@@ -19,11 +19,9 @@ jobs:
 
     - name: Run CIG command with code mount
       run: |
-        # 将当前工作目录挂载到容器的 /workspace
-        # 注意根据实际情况调整容器内的挂载路径
         docker run \
-          -v "$(pwd):/workspace" \
-          -w /workspace \           # 设置容器内工作目录
-          --rm \                    # 运行后自动删除容器
+          -v "${{ github.workspace }}:/workspace" \
+          -w /workspace \
+          --rm \
           ghcr.io/ivanbeethoven/cn-in-git:master \
           cig
