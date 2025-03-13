@@ -47,6 +47,8 @@ jobs:
           ghcr.io/ivanbeethoven/cn-in-git:master \
           cig
 ```
+
+
 ## 📦 安装
 
 ### 从Github Release下载
